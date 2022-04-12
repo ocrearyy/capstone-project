@@ -7,6 +7,7 @@
     "eslint-plugin-import": "^2.26.0",
     "hint": "^6.1.11",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
@@ -20,11 +21,11 @@
   "description": "This project is about building a web application based on an external API. We will select an API that provides data about a topic that we like and then build the webapp around it. The webapp will have 2 or 3 user interfaces.",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack",
     "start": "webpack serve --open"
+    
   },
   "repository": {
     "type": "git",
