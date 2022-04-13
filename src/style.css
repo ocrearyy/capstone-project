@@ -2,6 +2,92 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: cursive;
+}
+
+/* Header */
+
+nav {
+  display: flex;
+  margin: auto;
+  padding: 3%;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+}
+
+.nav-options ul {
+  display: flex;
+  gap: 5vw;
+}
+
+.nav-options ul li a {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+/* Header */
+
+/* Home page */
+.homepage ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 2em;
+  gap: 40px;
+  margin-left: 20px;
+  width: 80%;
+}
+
+.homepage ul li {
+  display: flex;
+  flex-direction: column;
+}
+
+.pkm-img {
+  max-width: 80%;
+  width: 50%;
+  align-self: center;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+
+.card-likes {
+  text-align: center;
+  cursor: pointer;
+}
+
+.comment-btn {
+  width: 80%;
+  align-self: center;
+  border: solid 2px;
+  padding: 0.1em 0.5em;
+  box-shadow: 3px 3px;
+  cursor: pointer;
+}
+
+.comment-btn:hover {
+  background-color: green;
+}
+
+.comment-btn:active {
+  background-color: burlywood;
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
 }
 
 footer {
