@@ -2,10 +2,10 @@ import axios from 'axios';
 
 const ulCards = document.querySelector('.home-list');
 
-const getData = async (id) => {
+const getData = async () => {
   try {
     for (let i = 0; i < 9; i += 1) {
-      const res = await axios(`https://pokeapi.co/api/v2/pokemon/${i + 1}/`);
+      const res = axios(`https://pokeapi.co/api/v2/pokemon/${i + 1}/`);
       console.log(res.data);
       const liCard = document.createElement('li');
       liCard.innerHTML = `
