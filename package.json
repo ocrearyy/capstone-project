@@ -25,7 +25,6 @@
     "test": "jest",
     "build": "webpack",
     "start": "webpack serve --open"
-    
   },
   "repository": {
     "type": "git",
@@ -37,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/oshanedesign/capstone-project/issues"
   },
-  "homepage": "https://github.com/oshanedesign/capstone-project#readme"
+  "homepage": "https://github.com/oshanedesign/capstone-project#readme",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
 }
