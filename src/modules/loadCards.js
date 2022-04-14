@@ -1,7 +1,8 @@
 import axios from 'axios';
 import displayComment from './displayComment';
 
-const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
+const url =
+  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
 const ulCards = document.querySelector('.home-list');
 const results = [];
 
@@ -21,7 +22,7 @@ const loadCards = (res, resLikes) => {
   ulCards.appendChild(liCard);
   document.querySelectorAll('.comment-btn').forEach((ele) => {
     ele.addEventListener('click', () => {
-     displayComment();
+      displayComment();
     });
   });
 };
@@ -51,5 +52,3 @@ const getData = async (i) => {
 };
 
 export default getData;
-
-
