@@ -1,4 +1,5 @@
 import axios from 'axios';
+import displayComment from './displayComment';
 
 const ulCards = document.querySelector('.home-list');
 
@@ -27,6 +28,14 @@ const loadCards = (res) => {
           <button class="comment-btn">Comments</button>
           `;
   ulCards.appendChild(liCard);
+  document.querySelectorAll('.comment-btn').forEach((ele) => {
+    ele.addEventListener('click', () => {
+     displayComment();
+    });
+  });
 };
 
+
 export default getData;
+
+
