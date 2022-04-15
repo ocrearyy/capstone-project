@@ -1,16 +1,8 @@
 import axios from 'axios';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import displayComment from './displayComment';
-import addComment from './addComment';
-
-=======
->>>>>>> 2423802726dce36120d9ef870245617028b05caa
-=======
 import postLikes from './postLikes';
->>>>>>> 1b9cf188694f9ccbe3e714edc3c491b5e16237db
 
-const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
+const url =
+  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
 const ulCards = document.querySelector('.home-list');
 const results = [];
 const resLikes = [];
