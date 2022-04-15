@@ -1,5 +1,7 @@
 import axios from 'axios';
 import displayComment from './displayComment';
+import addComment from './addComment';
+
 
 const ulCards = document.querySelector('.home-list');
 

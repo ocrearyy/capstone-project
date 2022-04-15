@@ -1,4 +1,4 @@
-
+import addComment from "./addComment";
 
 const displayComment = () => {
 // Get the modal
@@ -13,31 +13,31 @@ modal.innerHTML = `
                 <h2 class="comment-topic">Space 3</h2>
                 <div class="detail-container">
                 <div class="comment-details-1">
-                  <p>Fuel: titanium</p>
-                  <p>Weight: 400</p>
+                  <p>Weight: titanium</p>
+                  <p>Type: 400</p>
                 </div>
                 <div class="comment-details-2">
-                    <p>Length: 100,000</p>
-                    <p>Power: 100,000,000</p>
+                    <p>Id: 100,000</p>
+                    <p>Ability: 100,000,000</p>
                   </div>
                 </div>
                 <div class="comment-topic">
-                    <h2>Comments </h2>
-                    <p class="comment-list"> </p>
+                    <h2>Comments (2)</h2>
+                    <p id="output1" class="output"></p>
                 </div>
                 <div>
                     <h2 id="comment-add" class="comment-topic">Add a comment</h2>
                     <ul class="form-Ul">
                         <li class="form-Li">
                             <label for="name"></label>
-                            <input type="text" id="name" name="user_name" placeholder="Your name" required="" maxlength="30">
+                            <input type="text" id="name" name="user_name" placeholder="Your name" required="" maxlength="90">
                         </li>
                         <li class="form-Li">
                             <label for="msg"></label>
                             <textarea id="msg" name="user_message" placeholder="Your insights" maxlength="500" rows="20" cols="30" required=""></textarea>
                         </li>
                         <li class="button">
-                            <button id="comment-button" onclick="saveData()" type="submit">Comment</button>
+                            <button id="addBtn" type="button">Comment</button>
                         </li>
                     </ul>
 
@@ -53,6 +53,9 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
+addComment();
+
 };
+
 
 export default displayComment;
