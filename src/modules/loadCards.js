@@ -1,11 +1,10 @@
 import axios from 'axios';
 import postLikes from './postLikes';
 
-const url =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
 const ulCards = document.querySelector('.home-list');
 const results = [];
-let resLikes = [];
+const resLikes = [];
 
 const loadCards = (res, resLikes) => {
   const liCard = document.createElement('li');

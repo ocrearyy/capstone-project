@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-const url =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NPu1KWpwmlTnYdtWyYwl/likes';
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NPu1KWpwmlTnYdtWyYwl/likes';
 const postLikes = (pkmId) => {
   axios
     .post(url, {
