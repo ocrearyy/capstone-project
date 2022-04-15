@@ -1,4 +1,4 @@
 import './style.css';
 import loadCards from './modules/loadCards';
 
-loadCards();
+loadCards(0);
