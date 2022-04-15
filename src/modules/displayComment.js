@@ -1,8 +1,8 @@
 import addComment from "./addComment";
 
 const displayComment = () => {
-// Get the modal
-const modal = document.querySelector('#myModal');
+  // Get the modal
+  const modal = document.querySelector('#myModal');
 
 modal.style.display = 'block';
 modal.innerHTML = `
@@ -23,7 +23,7 @@ modal.innerHTML = `
                 </div>
                 <div class="comment-topic">
                     <h2>Comments (2)</h2>
-                    <p id="output1" class="output"></p>
+                    <ul id="output1" class="output"></ul>
                 </div>
                 <div>
                     <h2 id="comment-add" class="comment-topic">Add a comment</h2>
@@ -39,23 +39,17 @@ modal.innerHTML = `
                         <li class="button">
                             <button id="addBtn" type="button">Comment</button>
                         </li>
-                    </ul>
+                    </ul>`
+  modal.style.display = 'block';
 
-                </div>
-            </div>`
-
-// Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
-
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+  // Get the <span> element that closes the modal
+  const span = document.getElementsByClassName('close')[0];
+  span.onclick = function () {
+    modal.style.display = 'none';
+  };
 
 addComment();
 
 };
-
 
 export default displayComment;

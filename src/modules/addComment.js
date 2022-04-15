@@ -1,8 +1,11 @@
 import displayComment from "./displayComment";
 
 
-const addComment = () => {
 
+
+const addComment = async () => {
+
+  
     // Select variables 
   const name = document.getElementById('name');
   const msg = document.getElementById('msg');
@@ -11,10 +14,12 @@ const addComment = () => {
   const todayDate = new Date().toISOString().slice(0, 10);
 
    
+  
 // What should be displayed 
   const listComment = () => {
     output.textContent = `${todayDate} ${name.value}: ${msg.value}`;
   }
+
 
 //   When this button is clicked 
   addBtn.addEventListener('click', () => {

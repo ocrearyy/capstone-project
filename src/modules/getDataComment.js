@@ -11,12 +11,4 @@ const getDataComment = async (id) => {
     }
 };
 
-
-
-
 export default getDataComment;
-
-
-
-
-

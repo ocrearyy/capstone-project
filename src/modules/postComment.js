@@ -1,25 +1,11 @@
 import axios from "axios";
-import addComment from './addComment'
 
-let headersList = {
- "Accept": "*/*",
- "User-Agent": "Thunder Client (https://www.thunderclient.com)",
- "Content-Type": "application/json" 
+const postComment = (id, username, comment) => {
+   axios.post(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NPu1KWpwmlTnYdtWyYwl/comments`, {
+      "item_id": id,
+      "username": username,
+      "comment": comment
+  }).catch((error) => {
+    console.log(error)
+  })
 }
-
-let bodyContent = JSON.stringify({
-    "item_id": "1",
-    "username": `${addComment().name}`,
-    "comment": `${addComment().msg}`
-});
-
-let reqOptions = {
-  url: "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NPu1KWpwmlTnYdtWyYwl/comments",
-  method: "POST",
-  headers: headersList,
-  body: bodyContent,
-}
-
-axios.request(reqOptions).then(function (response) {
-  console.log(response.data);
-}) 
