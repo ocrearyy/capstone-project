@@ -1,14 +1,6 @@
 import axios from 'axios';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import displayComment from './displayComment';
-import addComment from './addComment';
-
-=======
->>>>>>> 2423802726dce36120d9ef870245617028b05caa
-=======
 import postLikes from './postLikes';
->>>>>>> 1b9cf188694f9ccbe3e714edc3c491b5e16237db
+import displayComment from './displayComment';
 
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
 const ulCards = document.querySelector('.home-list');
@@ -39,11 +31,15 @@ const renderData = (res1) => {
   }
   const likes = document.querySelectorAll('.like-btn');
   const likesP = document.querySelectorAll('.likes-p');
+  const modalComment = document.querySelectorAll('.comment-btn');
   for (let i = 0; i < likes.length; i += 1) {
     likes[i].addEventListener('click', () => {
       postLikes(results[i].data.forms[0].name);
       resLikes[0].data[i].likes += 1;
       likesP[i].innerHTML = `${resLikes[0].data[i].likes} likes`;
+    });
+    modalComment[i].addEventListener('click', () => {
+      displayComment(i + 1);
     });
   }
 };
@@ -55,7 +51,6 @@ const getData = async (i) => {
     if (i === 8) {
       const res1 = await axios(`${url}/apps/NPu1KWpwmlTnYdtWyYwl/likes/`);
       resLikes.push(res1);
-      console.log(resLikes[0].data[0]);
       renderData(res1);
     } else {
       i += 1;
