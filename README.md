@@ -27,6 +27,9 @@ To get a local copy up and running follow these simple example steps.
 
 4. Run npm start to get project running locally 
 
+#Testing
+- npm run test
+
 ## Authors
 
 👤 **Fernando Saldaña**
