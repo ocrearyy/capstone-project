@@ -3,8 +3,7 @@ import postLikes from './postLikes';
 import displayComment from './displayComment';
 import countItems from './countItems';
 
-const url =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
 const ulCards = document.querySelector('.home-list');
 const results = [];
 const resLikes = [];

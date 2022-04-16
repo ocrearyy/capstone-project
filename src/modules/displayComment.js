@@ -7,6 +7,16 @@ const liHolder = document.createElement('li');
 const ulCom = document.createElement('ul');
 const comCoun = document.createElement('h2');
 
+const loadListComments = (id) => {
+  getDataComment(id).then((result) => {
+    for (let i = 0; i < result.data.length; i += 1) {
+      const li = document.createElement('li');
+      li.innerHTML = `(${result.data[i].creation_date}) ${result.data[i].username}: ${result.data[i].comment}`;
+      ulCom.appendChild(li);
+    }
+  });
+};
+
 const displayComment = (id) => {
   // Get the modal
   const modal = document.querySelector('#myModal');
