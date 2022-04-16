@@ -1,6 +1,7 @@
 import axios from 'axios';
 import postLikes from './postLikes';
 import displayComment from './displayComment';
+import countItems from './countItems';
 
 const url =
   'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
@@ -24,12 +25,14 @@ const loadCards = (res, resLikes) => {
   ulCards.appendChild(liCard);
 };
 
-const renderData = (res1) => {
-  for (let i = 0; i < 9; i += 1) {
+const renderData = (res1, pkm) => {
+  for (let i = 0; i < countItems(); i += 1) {
     if (res1.data[i].item_id === results[i].data.forms[0].name) {
       loadCards(results[i], res1.data[i]);
     }
   }
+  const pkmCounter = document.getElementById('pkm-counter');
+  pkmCounter.innerHTML = `<li id="pkm-counter"><a href="#">Pokemon (${countItems()})</a></li>`;
   const likes = document.querySelectorAll('.like-btn');
   const likesP = document.querySelectorAll('.likes-p');
   const modalComment = document.querySelectorAll('.comment-btn');
@@ -45,14 +48,14 @@ const renderData = (res1) => {
   }
 };
 
-const getData = async (i) => {
+const getData = async (i, pkm) => {
   try {
     const res = await axios(`https://pokeapi.co/api/v2/pokemon/${i + 1}/`);
     results.push(res);
     if (i === 8) {
       const res1 = await axios(`${url}/apps/NPu1KWpwmlTnYdtWyYwl/likes/`);
       resLikes.push(res1);
-      renderData(res1);
+      renderData(res1, pkm);
     } else {
       i += 1;
       getData(i);

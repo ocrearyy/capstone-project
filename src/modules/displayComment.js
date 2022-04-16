@@ -1,9 +1,11 @@
 import getApi from './getApi';
 import postComment from './postComment';
 import getDataComment from './getDataComment';
+import counterComments from './counterComments';
 
 const liHolder = document.createElement('li');
 const ulCom = document.createElement('ul');
+const comCoun = document.createElement('h2');
 
 const displayComment = (id) => {
   // Get the modal
@@ -11,6 +13,7 @@ const displayComment = (id) => {
 
   getApi(id).then((res) => {
     ulCom.innerHTML = '';
+    comCoun.innerHTML = '';
     modal.style.display = 'block';
     modal.innerHTML = `
 <!-- Modal content -->
@@ -29,7 +32,6 @@ const displayComment = (id) => {
                   </div>
                 </div>
                 <div class="comments">
-                    <h2>Comments (2)</h2>
                 </div>
                 <div>
                     <h2 id="comment-add" class="comment-topic">Add a comment</h2>
@@ -51,7 +53,7 @@ const displayComment = (id) => {
 
     const commentDiv = document.querySelector('.comments');
     loadListComments(id);
-    commentDiv.append(ulCom);
+    commentDiv.append(comCoun, ulCom);
 
     const addBtn = document.getElementById('addBtn');
 
@@ -81,7 +83,9 @@ const loadListComments = (id) => {
       const li = document.createElement('li');
       li.innerHTML = `(${result.data[i].creation_date}) ${result.data[i].username}: ${result.data[i].comment}`;
       ulCom.appendChild(li);
+      comCoun.innerHTML = `Comments: ${result.data.length}`;
     }
+    counterComments(result.data.length);
   });
 };
 
