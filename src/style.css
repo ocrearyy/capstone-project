@@ -13,11 +13,6 @@ h4 {
   font-family: cursive;
 }
 
-p {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 18px;
-}
-
 /* Header */
 
 nav {
@@ -43,23 +38,12 @@ nav {
 /* Header */
 
 /* Home page */
-
-.homepage {
-  display: flex;
-  flex-direction: column;
-}
-
-.homepage h1 {
-  align-self: center;
-  font-size: 4vh;
-}
-
 .homepage ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding-top: 2em;
+  margin-top: 2em;
   gap: 40px;
-  margin: auto;
+  margin-left: 20px;
   width: 80%;
 }
 
@@ -69,6 +53,7 @@ nav {
 }
 
 .pkm-img {
+  max-width: 80%;
   width: 50%;
   align-self: center;
 }
@@ -118,11 +103,12 @@ footer {
   padding: 20px;
   color: #000;
   border: 2px solid #000;
-  width: 100vw;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: 10%;
   font-size: 20px;
   font-weight: 200;
-  margin-top: 20px;
 }
 
 .pokeball {
@@ -160,27 +146,16 @@ footer {
 .form-Ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 100px;
 }
 
 .form-Li {
   padding-bottom: 20px;
-  width: 100%;
-  text-align: center;
-}
-
-.form-Li input {
-  width: 80%;
-}
-
-.form-Li textarea {
-  width: 80%;
 }
 
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
-  flex-direction: column;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -194,8 +169,6 @@ footer {
 
 /* Modal Content/Box */
 .modal-content {
-  display: flex;
-  flex-direction: column;
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
@@ -203,17 +176,13 @@ footer {
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
-.pokeImage {
-  width: 200px;
-  align-self: center;
-}
-
 /* The Close Button */
 .close {
   color: #000;
-  justify-content: flex-end;
+  float: right;
   font-size: 50px;
   font-weight: bolder;
+
 }
 
 .close:hover,
@@ -221,15 +190,4 @@ footer {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-.comments {
-  align-self: center;
-  text-align: center;
-}
-
-.comments ul li {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20px;
-  text-align: left;
 }

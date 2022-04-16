@@ -1,45 +1,29 @@
-import getApi from './getApi';
-import postComment from './postComment';
-import getDataComment from './getDataComment';
+import addComment from "./addComment";
 
-const liHolder = document.createElement('li');
-const ulCom = document.createElement('ul');
-
-const loadListComments = (id) => {
-  getDataComment(id).then((result) => {
-    for (let i = 0; i < result.data.length; i += 1) {
-      const li = document.createElement('li');
-      li.innerHTML = `(${result.data[i].creation_date}) ${result.data[i].username}: ${result.data[i].comment}`;
-      ulCom.appendChild(li);
-    }
-  });
-};
-
-const displayComment = (id) => {
+const displayComment = () => {
   // Get the modal
   const modal = document.querySelector('#myModal');
 
-  getApi(id).then((res) => {
-    ulCom.innerHTML = '';
-    modal.style.display = 'block';
-    modal.innerHTML = `
+modal.style.display = 'block';
+modal.innerHTML = `
 <!-- Modal content -->
             <div class="modal-content">
             <span class="close">&times;</span>
-                <img class="pokeImage" src="${res.data.sprites.other.dream_world.front_default}" alt="">
-                <h2 class="comment-topic">${res.data.forms[0].name}</h2>
+                <img class="pokeImage" src="" alt="">
+                <h2 class="comment-topic">Space 3</h2>
                 <div class="detail-container">
                 <div class="comment-details-1">
-                  <p>Weight: ${res.data.weight}</p>
-                  <p>Type: ${res.data.types[0].type.name}</p>
+                  <p>Weight: titanium</p>
+                  <p>Type: 400</p>
                 </div>
                 <div class="comment-details-2">
-                    <p>Pokedex Id: ${id}</p>
-                    <p>Base ATK: ${res.data.stats[1].base_stat}</p>
+                    <p>Id: 100,000</p>
+                    <p>Ability: 100,000,000</p>
                   </div>
                 </div>
-                <div class="comments">
+                <div class="comment-topic">
                     <h2>Comments (2)</h2>
+                    <ul id="output1" class="output"></ul>
                 </div>
                 <div>
                     <h2 id="comment-add" class="comment-topic">Add a comment</h2>
@@ -55,34 +39,17 @@ const displayComment = (id) => {
                         <li class="button">
                             <button id="addBtn" type="button">Comment</button>
                         </li>
-                    </ul>`;
+                    </ul>`
+  modal.style.display = 'block';
 
-    modal.style.display = 'flex';
+  // Get the <span> element that closes the modal
+  const span = document.getElementsByClassName('close')[0];
+  span.onclick = function () {
+    modal.style.display = 'none';
+  };
 
-    const commentDiv = document.querySelector('.comments');
-    loadListComments(id);
-    commentDiv.append(ulCom);
+addComment();
 
-    const addBtn = document.getElementById('addBtn');
-
-    addBtn.addEventListener('click', () => {
-      const username = document.getElementById('name').value;
-      const comment = document.getElementById('msg').value;
-      if (username.length !== 0 && comment.length !== 0) {
-        postComment(id, username, comment);
-        // placeholder of the comment for better performance
-        liHolder.innerHTML = `${username}: ${comment}`;
-        ulCom.append(liHolder);
-        commentDiv.appendChild(ulCom);
-      }
-    });
-
-    // Get the <span> element that closes the modal
-    const span = document.getElementsByClassName('close')[0];
-    span.onclick = function () {
-      modal.style.display = 'none';
-    };
-  });
 };
 
 export default displayComment;
