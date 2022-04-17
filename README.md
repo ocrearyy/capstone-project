@@ -9,7 +9,7 @@ This project is about building a web application based on an external API. We wi
 
 ## Live Demo
 
-https://oshanedesign.github.io/capstone-project/
+https://oshanedesign.github.io/capstone-project/dist/
  
 ## Getting Started
 
