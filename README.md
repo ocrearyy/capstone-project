@@ -13,7 +13,7 @@ To be released soon
 
 ## Live Demo
 
-Coming Soon
+https://oshanedesign.github.io/capstone-project/
  
 ## Getting Started
 
