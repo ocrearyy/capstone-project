@@ -7,6 +7,7 @@ const getApi = async (id) => {
   } catch (error) {
     console.log(error);
   }
+  return true;
 };
 
 export default getApi;

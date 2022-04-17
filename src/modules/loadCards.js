@@ -3,8 +3,7 @@ import postLikes from './postLikes';
 import displayComment from './displayComment';
 import countItems from './countItems';
 
-const url =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
 const ulCards = document.querySelector('.home-list');
 const results = [];
 const resLikes = [];
@@ -25,7 +24,7 @@ const loadCards = (res, resLikes) => {
   ulCards.appendChild(liCard);
 };
 
-const renderData = (res1, pkm) => {
+const renderData = (res1) => {
   for (let i = 0; i < countItems(); i += 1) {
     if (res1.data[i].item_id === results[i].data.forms[0].name) {
       loadCards(results[i], res1.data[i]);
@@ -48,14 +47,14 @@ const renderData = (res1, pkm) => {
   }
 };
 
-const getData = async (i, pkm) => {
+const getData = async (i) => {
   try {
     const res = await axios(`https://pokeapi.co/api/v2/pokemon/${i + 1}/`);
     results.push(res);
     if (i === 8) {
       const res1 = await axios(`${url}/apps/NPu1KWpwmlTnYdtWyYwl/likes/`);
       resLikes.push(res1);
-      renderData(res1, pkm);
+      renderData(res1);
     } else {
       i += 1;
       getData(i);

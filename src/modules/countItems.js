@@ -1,5 +1,3 @@
-const countItems = () => {
-  return 9;
-};
+const countItems = () => 9;
 
 module.exports = countItems;

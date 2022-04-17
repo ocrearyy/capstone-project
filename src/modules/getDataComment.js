@@ -9,6 +9,7 @@ const getDataComment = async (id) => {
   } catch (error) {
     console.log(error);
   }
+  return true;
 };
 
 export default getDataComment;
