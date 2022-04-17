@@ -1,6 +1,7 @@
 import axios from 'axios';
 import postLikes from './postLikes';
 import displayComment from './displayComment';
+import countItems from './countItems';
 
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
 const ulCards = document.querySelector('.home-list');
@@ -24,11 +25,13 @@ const loadCards = (res, resLikes) => {
 };
 
 const renderData = (res1) => {
-  for (let i = 0; i < 9; i += 1) {
+  for (let i = 0; i < countItems(); i += 1) {
     if (res1.data[i].item_id === results[i].data.forms[0].name) {
       loadCards(results[i], res1.data[i]);
     }
   }
+  const pkmCounter = document.getElementById('pkm-counter');
+  pkmCounter.innerHTML = `<li id="pkm-counter"><a href="#">Pokemon (${countItems()})</a></li>`;
   const likes = document.querySelectorAll('.like-btn');
   const likesP = document.querySelectorAll('.likes-p');
   const modalComment = document.querySelectorAll('.comment-btn');
