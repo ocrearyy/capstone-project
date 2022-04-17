@@ -7,13 +7,9 @@ This project is about building a web application based on an external API. We wi
 - HTML
 - JavaScript
 
-## Screenshots
-
-To be released soon 
-
 ## Live Demo
 
-Coming Soon
+https://oshanedesign.github.io/capstone-project/dist/
  
 ## Getting Started
 
@@ -26,6 +22,9 @@ To get a local copy up and running follow these simple example steps.
 3. Run npm install to get project running locally
 
 4. Run npm start to get project running locally 
+
+#Testing
+- npm run test
 
 ## Authors
 
